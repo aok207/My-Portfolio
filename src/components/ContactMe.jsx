@@ -3,7 +3,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 function ContactMe() {
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
@@ -47,7 +46,7 @@ function ContactMe() {
 
     // Call the API
     if (isCaptchaVerified) {
-      fetch("http://localhost:3001/submit-form", {
+      fetch(import.meta.env.VITE_SERVER_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -114,11 +113,16 @@ function ContactMe() {
   };
 
   return (
-    <section id="contact" className="flex justify-center bg-blue-100/30 gap-10 py-20 dark:bg-gray-950">
+    <section
+      id="contact"
+      className="flex justify-center bg-blue-100/30 gap-10 py-20 dark:bg-gray-950"
+    >
       <div>
         <div className="text-center">
           <p className="text-gray-500 text-lg font-bold">Get In Touch</p>
-          <h1 className="text-3xl font-semibold dark:text-slate-300">Contact Me</h1>
+          <h1 className="text-3xl font-semibold dark:text-slate-300">
+            Contact Me
+          </h1>
         </div>
         <div className="flex justify-center">
           <ToastContainer

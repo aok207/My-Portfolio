@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Suspense } from "react";
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 const Navbar = React.lazy(() => import("./components/Navbar"));
 const HeroSection = React.lazy(() => import("./components/HeroSection"));
@@ -18,13 +18,14 @@ const Loading = () => (
 );
 
 function App() {
-  const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const getCurrentTheme = () =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   const [isDarkMode, setIsDarkMode] = useState(getCurrentTheme());
 
   const toggleDarkMode = () => {
-		setIsDarkMode(!isDarkMode);
-	}
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
     <Suspense fallback={Loading()}>

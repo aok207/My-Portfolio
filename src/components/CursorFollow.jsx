@@ -121,28 +121,27 @@ const CursorFollow = () => {
 
     const handleMouseOut = () => {
       setIsPointerCursor(false);
-    }
+    };
 
     // Attach the mouseover and mouseout event listeners to all of the elements that has the class hoverable
-    document.querySelectorAll(".hoverable").forEach(btn => {
-      btn.addEventListener('mouseover', handleMouseOver);
+    document.querySelectorAll(".hoverable").forEach((btn) => {
+      btn.addEventListener("mouseover", handleMouseOver);
     });
 
-    document.querySelectorAll(".hoverable").forEach(btn => {
-      btn.addEventListener('mouseout', handleMouseOut);
+    document.querySelectorAll(".hoverable").forEach((btn) => {
+      btn.addEventListener("mouseout", handleMouseOut);
     });
 
     // Clean up the event listener when the component is unmounted
     return () => {
-      document.querySelectorAll(".hoverable").forEach(btn => {
-        btn.removeEventListener('mouseover', handleMouseOver);
+      document.querySelectorAll(".hoverable").forEach((btn) => {
+        btn.removeEventListener("mouseover", handleMouseOver);
       });
-  
-      document.querySelectorAll(".hoverable").forEach(btn => {
-        btn.removeEventListener('mouseout', handleMouseOut);
+
+      document.querySelectorAll(".hoverable").forEach((btn) => {
+        btn.removeEventListener("mouseout", handleMouseOut);
       });
     };
-
   }, []);
 
   return (
@@ -161,11 +160,21 @@ const CursorFollow = () => {
       <div
         style={{
           position: "absolute",
-          left: `${!isPointerCursor ? innerCirclePosition.x + 16 : innerCirclePosition.x + 12}px`,
-          top: `${!isPointerCursor ? innerCirclePosition.y + 16 : innerCirclePosition.y + 12}px`,
+          left: `${
+            !isPointerCursor
+              ? innerCirclePosition.x + 16
+              : innerCirclePosition.x + 12
+          }px`,
+          top: `${
+            !isPointerCursor
+              ? innerCirclePosition.y + 16
+              : innerCirclePosition.y + 12
+          }px`,
           zIndex: 999,
         }}
-        className={`rounded-full pointer-events-none bg-purple-700 ${!isPointerCursor ? "w-2 h-2" : "w-4 h-4"}`}
+        className={`rounded-full pointer-events-none bg-purple-700 ${
+          !isPointerCursor ? "w-2 h-2" : "w-4 h-4"
+        }`}
       ></div>
     </div>
   );
