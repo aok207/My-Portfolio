@@ -37,7 +37,7 @@ function App() {
         <ContactMe />
         <CursorFollow />
         <button
-          className="hoverable fixed w-16 h-16 right-16 bottom-16 bg-neutral-900 text-white rounded-full dark:bg-neutral-100 dark:text-black"
+          className="hoverable fixed w-16 h-16 right-16 bottom-16 bg-neutral-900 text-white rounded-full dark:bg-neutral-100 dark:text-black max-md:right-5 max-md:bottom-10"
           onClick={toggleDarkMode}
         >
           {!isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}

@@ -106,7 +106,7 @@ const Navbar = () => {
       <div className="hoverable flex items-center hover:cursor-pointer select-none ml-5 ">
         <Link to="home" spy={true} smooth={true} offset={-70} duration={500} className="hoverable flex items-center">
           <img
-            src="./public/logo.png"
+            src="./Logo.png"
             alt=""
             className="mr-3 w-10 max-md:w-8"
           />
