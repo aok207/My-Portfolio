@@ -25,7 +25,7 @@ function Projects() {
             <svg
               viewBox="0 0 98 96"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ width: "30", height: "28" }}
+              style={{ width: "30px", height: "28px" }}
             >
               <path
                 fillRule="evenodd"
