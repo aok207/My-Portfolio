@@ -112,15 +112,15 @@ const CursorFollow = () => {
 
   // Check if the cursor property is set to "pointer"
   //const isPointerCursor = computedStyle.cursor === "pointer";
-  const [isPointerCursor, setIsPointerCursor] = useState(false);
+  const [currentCursorState, setCurrentCursorState] = useState("normal");
 
   useEffect(() => {
     const handleMouseOver = () => {
-      setIsPointerCursor(true);
+      setCurrentCursorState("pointer");
     };
 
     const handleMouseOut = () => {
-      setIsPointerCursor(false);
+      setCurrentCursorState("normal");
     };
 
     // Attach the mouseover and mouseout event listeners to all of the elements that has the class hoverable
@@ -145,38 +145,35 @@ const CursorFollow = () => {
   }, []);
 
   return (
-    <div
-      id="circle"
-      style={{
-        position: "absolute",
-        left: `${outerCirclePosition.x + 10}px`,
-        top: `${outerCirclePosition.y + 10}px`,
-        zIndex: 999,
-      }}
-      className={`border border-purple-800 w-[40px] h-[40px] rounded-full pointer-events-none ${
-        isMobileDevice ? "hidden" : ""
-      }`}
-    >
+    <>
       <div
+        id="circle"
         style={{
           position: "absolute",
-          left: `${
-            !isPointerCursor
-              ? innerCirclePosition.x + 16
-              : innerCirclePosition.x + 12
-          }px`,
-          top: `${
-            !isPointerCursor
-              ? innerCirclePosition.y + 16
-              : innerCirclePosition.y + 12
-          }px`,
+          left: `${outerCirclePosition.x + 10}px`,
+          top: `${outerCirclePosition.y + 10}px`,
           zIndex: 999,
         }}
-        className={`rounded-full pointer-events-none bg-purple-700 ${
-          !isPointerCursor ? "w-2 h-2" : "w-4 h-4"
+        className={`relative border dark:shadow-purple-700 border-purple-800 w-[40px] h-[40px] rounded-full pointer-events-none ${
+          isMobileDevice ? "hidden" : ""
         }`}
-      ></div>
-    </div>
+      >
+        <div
+          style={{
+            position: "absolute",
+            left: `${innerCirclePosition.x + 16}px`,
+            top: `${innerCirclePosition.y + 16}px`,
+            zIndex: 999,
+          }}
+          className={`rounded-full pointer-events-none bg-purple-700 transition-transform duration-300 w-2 h-2 transform ${
+            currentCursorState === "normal"
+              ? "scale-100"
+              : "scale-[2] transform"
+          }`}
+        ></div>
+        <div className="dark:blur-xl bg-purple-600/50 dark:w-[60px] dark:h-[60px] rounded-full absolute -top-[30%] -left-[30%]"></div>
+      </div>
+    </>
   );
 };
 
