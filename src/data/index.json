@@ -70,6 +70,13 @@
       "title": "LinkedIn Clone",
       "description": "Designed as a LinkedIn clone, this project prioritizes a seamless user experience with features such as secure authentication and Firebase integration for both database management and user authentication. The platform enables users to create and share posts. Built with React and enhanced with Material-UI, the clone mirrors the familiar LinkedIn interface.",
       "link": "https://github.com/aok207/LinkedIn-Clone"
+    },
+    {
+      "id": "4",
+      "src": "./img/project4.png",
+      "title": "E-Commerce Website",
+      "description": "Crafted as an eCommerce platform with an intuitive admin panel, this project seamlessly integrates Laravel, React, and MySQL. It offers authentication, authorization, and OAuth with Google and GitHub. Users enjoy browsing a vast product catalog with dynamic filtering, bookmarking products, and secure checkout via PayPal. Admins manage products, categories, users, and orders, with full control over the system's operations.",
+      "link": "https://github.com/aok207/E-commerce-website"
     }
   ]
 }
