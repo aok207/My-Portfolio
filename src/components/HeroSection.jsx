@@ -13,20 +13,6 @@ function HeroSection() {
     setIsVisible(true);
   }, []);
 
-  const linkOnClick = (e) => {
-    e.preventDefault();
-    const target = e.currentTarget;
-
-    // Remove the class immediately
-    target.classList.remove("hover:scale-125");
-
-    // Add the class after a delay
-    setTimeout(() => {
-      target.classList.add("hover:scale-125");
-      window.open(target.href, "_blank");
-    }, 300);
-  };
-
   return (
     <section
       id="home"
@@ -63,8 +49,7 @@ function HeroSection() {
           href="https://www.linkedin.com/in/aung-oo-khant/"
           target="_blank"
           rel="noreferrer"
-          className="hoverable text-blue-900 hover:scale-125 transition-transform duration-300 ease-in-out"
-          onClick={(e) => linkOnClick(e)}
+          className="hoverable text-blue-900 hover:scale-125 active:scale-100 transition-transform duration-150 ease-in-out"
         >
           <LinkedInIcon style={{ fontSize: "50px" }} />
         </a>
@@ -72,8 +57,7 @@ function HeroSection() {
           href="https://www.facebook.com/aungookhant.aung"
           target="_blank"
           rel="noreferrer"
-          className="hoverable text-blue-700 hover:scale-125 transition-transform duration-300 ease-in-out"
-          onClick={(e) => linkOnClick(e)}
+          className="hoverable text-blue-700 hover:scale-125 transition-transform duration-150 ease-in-out active:scale-100"
         >
           <FacebookIcon style={{ fontSize: "50px" }} />
         </a>
@@ -81,8 +65,7 @@ function HeroSection() {
           href="https://github.com/aok207"
           target="_blank"
           rel="noreferrer"
-          className="hoverable hover:scale-125 transition-transform duration-300 ease-in-out dark:text-white"
-          onClick={(e) => linkOnClick(e)}
+          className="hoverable hover:scale-125 transition-transform duration-150 ease-in-out dark:text-white active:scale-100"
         >
           <GitHubIcon style={{ fontSize: "50px" }} />
         </a>
