@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import "./Navbar.css";
+import "../css/Navbar.css";
 
 const NavItem = ({ to, label, activeLink, onClick }) => (
   <Link

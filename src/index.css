@@ -23,3 +23,31 @@ body {
 .go-to-github-link:hover::after {
   width: 100%;
 }
+
+.loading {
+  @apply rounded-full w-[30px] h-[30px] bg-purple-700;
+  animation: load 0.6s ease infinite;
+}
+
+.loading.one {
+  animation-delay: 0.1s;
+}
+
+.loading.two {
+  animation-delay: 0.2s;
+}
+.loading.three {
+  animation-delay: 0.3s;
+}
+
+@keyframes load {
+  0% {
+    width: 30px;
+    height: 30px;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+}

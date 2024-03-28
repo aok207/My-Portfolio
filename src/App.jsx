@@ -12,8 +12,11 @@ const ContactMe = React.lazy(() => import("./components/ContactMe"));
 const CursorFollow = React.lazy(() => import("./components/CursorFollow"));
 
 const Loading = () => (
-  <div className="flex justify-center items-center h-screen">
-    <span className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-purple-600" />
+  <div className="flex gap-6 justify-center items-center h-screen">
+    <div className="loading one" />
+    <div className="loading two" />
+    <div className="loading three" />
+    <div className="loading four" />
   </div>
 );
 

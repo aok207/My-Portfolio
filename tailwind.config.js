@@ -9,7 +9,7 @@ export default {
       animation: {
         shine: "shine 1s",
         ripple: "ripple 1s linear infinite",
-        typing: "typing 2s steps(20) infinite alternate, blink .7s infinite"
+        typing: "typing 2s steps(20) infinite alternate, blink .7s infinite",
       },
       keyframes: {
         shine: {
@@ -35,7 +35,7 @@ export default {
           "100%": {
             borderColor: "white"
           }
-        }
+        },
       },
     },
   },

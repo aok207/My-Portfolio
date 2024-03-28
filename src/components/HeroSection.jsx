@@ -4,6 +4,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import Button from "./Button";
 
 function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,9 +40,7 @@ function HeroSection() {
         </p>
 
         <Link to="contact" spy={true} smooth={true} offset={-70} duration={500}>
-          <button className="hoverable text-white p-3 rounded-md hover:bg-blue-100/30 hover:border hover:border-violet-600 hover:text-violet-600 bg-violet-600 max-lg:mx-auto border dark:border-purple-800 dark:bg-purple-600 dark:hover:bg-gray-950">
-            Get In Touch
-          </button>
+          <Button text="Get In Touch" className="hoverable max-lg:mx-auto" />
         </Link>
       </div>
       <div className="flex justify-center gap-4 mt-10">
