@@ -1,37 +1,51 @@
-const words = ["Web", "Software", "Python", "Php", "Frontend", "Backend", "Javascript"];
-const typingDelay = 200;
-const erasingDelay = 200;
+const words = ["Web", "Software", "Python", "Php", "Frontend", "Backend", "Javascript", "Fullstack"];
+const typingDelay = 100;
+const erasingDelay = 100;
 // Delay between current and next text
 const newLetterDelay = 1000;
+
+let typedTextSpanEle;
+
 let index = 0;
 let charIndex = 0;
 
 export default function generateText(typedTextEle) {
+  typedTextSpanEle = typedTextEle;
+
   if (words.length) {
-    setTimeout(() => type(typedTextEle), newLetterDelay);
+    setTimeout(type, newLetterDelay);
   }
 }
 
-function type(typedTextEle) {
+function type() {
   if (charIndex < words[index].length) {
-    typedTextEle.textContent += words[index].charAt(charIndex);
+    typedTextSpanEle.textContent += words[index].charAt(charIndex);
+
     charIndex++;
-    setTimeout(() => type(typedTextEle), typingDelay);
+
+    setTimeout(type, typingDelay);
   } else {
-    setTimeout(() => erase(typedTextEle), newLetterDelay);
+    setTimeout(erase, newLetterDelay);
   }
 }
 
-function erase(typedTextEle) {
+function erase() {
   if (charIndex > 0) {
-    typedTextEle.textContent = words[index].substring(0, charIndex - 1);
+    typedTextSpanEle.textContent = words[index].substring(0, charIndex - 1);
+
     charIndex--;
-    setTimeout(() => erase(typedTextEle), erasingDelay);
+
+    setTimeout(erase, erasingDelay);
   } else {
     index++;
+
     if (index >= words.length) {
       index = 0;
     }
-    setTimeout(() => type(typedTextEle), typingDelay + 100);
+
+    setTimeout(type, newLetterDelay + 10); 
   }
 }
+
+
+

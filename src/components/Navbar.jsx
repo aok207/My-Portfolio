@@ -22,11 +22,13 @@ const NavItem = ({ to, label, activeLink, onClick }) => (
   </Link>
 );
 
-const HamburgerButton = ({ onClick }) => (
+const HamburgerButton = ({ onClick, sidebarOpened }) => (
   <button
     id="hamburger-btn"
     onClick={onClick}
-    className="hoverable hidden max-md:block z-50"
+    className={`hoverable hidden max-md:block z-50 ${
+      sidebarOpened ? "open" : ""
+    }`}
   >
     <span className="bg-black dark:bg-white"></span>
     <span className="bg-black dark:bg-white"></span>
@@ -42,6 +44,7 @@ const SidebarItem = ({ to, label, activeLink, onClick }) => (
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("home");
+  const [sidebarOpened, setSidebarOpened] = useState(false);
   const sections = ["home", "skills", "projects", "about"];
 
   const handleLinkClick = (link) => {
@@ -76,21 +79,29 @@ const Navbar = () => {
     // Add scroll listener when the component mounts
     window.addEventListener("scroll", handleScroll);
 
+    const handleSidebarClickedAway = (e) => {
+      if (e.target.id !== "hamburger-btn") {
+        setSidebarOpened(false);
+      }
+    };
+
+    // Handle sidebar click away;
+    document.addEventListener("click", handleSidebarClickedAway);
+
     // Clean up the listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("click", handleSidebarClickedAway);
     };
   }, []);
 
   const hamburgerOnClick = () => {
-    document.getElementById("hamburger-btn").classList.toggle("open");
-    document.getElementById("menu").classList.toggle("hide--sidebar");
+    setSidebarOpened((prevState) => !prevState);
   };
 
   document.querySelectorAll(".sidebar-links").forEach((link) => {
     link.addEventListener("click", () => {
-      document.getElementById("hamburger-btn").classList.remove("open");
-      document.getElementById("menu").classList.remove("hide--sidebar");
+      setSidebarOpened(false);
     });
   });
 
@@ -104,9 +115,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flex items-center justify-between py-3 px-10 shadow-md sticky top-0 bg-white max-md:px-3 z-50 transition-opacity duration-1000 ease-in-out ${
+      className={`flex items-center justify-between py-3 px-10 shadow-md fixed w-screen top-0 max-md:px-3 z-50 transition-opacity duration-1000 ease-in-out backdrop-blur-lg bg-transparent ${
         isVisible === true ? "opacity-100" : "opacity-0"
-      } dark:bg-gray-950`}
+      }`}
     >
       <div className="hoverable flex items-center hover:cursor-pointer select-none ml-5 ">
         <Link
@@ -143,12 +154,17 @@ const Navbar = () => {
             Contact Me
           </button>
         </Link>
-        <HamburgerButton onClick={hamburgerOnClick} />
+        <HamburgerButton
+          onClick={hamburgerOnClick}
+          sidebarOpened={sidebarOpened}
+        />
       </div>
 
       <ul
         id="menu"
-        className="fixed top-0 leading-tight font-semibold shadow-md h-screen z-49 bg-white dark:bg-black"
+        className={`fixed top-0 leading-tight font-semibold shadow-md h-screen z-49 bg-white dark:bg-black text-2xl flex flex-col justify-center gap-10 ${
+          sidebarOpened ? "hide--sidebar" : ""
+        }`}
       >
         {sections.map((section) => (
           <SidebarItem

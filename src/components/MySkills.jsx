@@ -6,13 +6,8 @@ function MySkills() {
       id="skills"
       className="flex py-24 px-12 flex-col justify-center items-start gap-20 max-md:items-center dark:bg-slate-900"
     >
-      <div className="max-md:text-center">
-        <p className="text-xl font-semibold text-gray-600 dark:text-slate-200">
-          My Skills
-        </p>
-        <h2 className="text-4xl font-semibold dark:text-white">
-          My Expertises
-        </h2>
+      <div className="text-center mx-auto">
+        <h2 className="text-4xl font-semibold dark:text-white">My Skills</h2>
       </div>
       <div className="grid justify-center items-start gap-10 grid-cols-4 md:max-lg:grid-cols-2 max-md:grid-cols-1 max-md:text-center max-md:items-center">
         {data?.skills?.map((item, index) => (
