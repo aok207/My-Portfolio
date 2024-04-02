@@ -4,15 +4,19 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Button from "./Button";
+import generateText from "../utils/autoTextGenerator";
 
 function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const arrowRef = useRef();
+  const typedTextRef = useRef();
 
   useEffect(() => {
     // Trigger the fade-in effect once the component is mounted
     setIsVisible(true);
-    console.log(arrowRef);
+
+    // Auto Typing Text
+    generateText(typedTextRef.current);
   }, []);
 
   // Arrow fade in effect
@@ -44,9 +48,10 @@ function HeroSection() {
           Hey! I&apos;m Aung Oo Khant.
         </p>
         <h1 className="text-6xl lg:max-[1026px]:text-5xl font-bold mb-5 max-sm:text-4xl dark:text-slate-500">
-          <span className="text-purple-600 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black">
-            Web
-          </span>
+          <span
+            className="text-purple-600 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black"
+            ref={typedTextRef}
+          ></span>
           <br />
           Developer
         </h1>
