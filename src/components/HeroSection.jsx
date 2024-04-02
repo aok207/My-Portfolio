@@ -1,17 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Button from "./Button";
 
 function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const arrowRef = useRef();
 
   useEffect(() => {
     // Trigger the fade-in effect once the component is mounted
     setIsVisible(true);
+    console.log(arrowRef);
+  }, []);
+
+  // Arrow fade in effect
+  useEffect(() => {
+    function handleScroll() {
+      console.log(window.scrollY);
+      if (window.scrollY >= 500) {
+        arrowRef.current.classList.remove("opacity-100");
+        arrowRef.current.classList.add("opacity-0");
+      } else {
+        arrowRef.current.classList.remove("opacity-0");
+        arrowRef.current.classList.add("opacity-100");
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -69,14 +87,12 @@ function HeroSection() {
           <GitHubIcon style={{ fontSize: "50px" }} />
         </a>
       </div>
-      <div className="border w-fit border-purple-800 rounded-full flex items-center justify-center mt-5 hover:cursor-pointer hoverable">
-        <Link to="skills" spy={true} smooth={true} offset={-70} duration={500}>
-          <ArrowDownwardIcon
-            className="animate-bounce mb-2 mt-4 text-purple-700"
-            style={{ fontSize: "30px" }}
-          />
-        </Link>
-      </div>
+      <Link to="skills" spy={true} smooth={true} offset={-70} duration={500}>
+        <div
+          className="border w-[45px] h-[45px] relative border-purple-800 rounded-full mt-10 hover:cursor-pointer hoverable before:content-[''] before:absolute before:top-[13px] before:left-[15px] before:w-[12px] before:h-[12px] before:border-b-2 before:border-b-purple-800 before:border-l-2 before:border-l-purple-800 before:transform before:-rotate-45 animate-bounce transition-all duration-300 ease-in"
+          ref={arrowRef}
+        ></div>
+      </Link>
     </section>
   );
 }
