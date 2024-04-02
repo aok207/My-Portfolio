@@ -146,14 +146,21 @@ const Navbar = () => {
         ))}
       </div>
       <div className="mr-5 flex">
-        <Link to="contact" spy={true} smooth={true} offset={-70} duration={500}>
-          <button
-            className="hoverable border-purple-700 border text-purple-800 bg-white hover:bg-purple-600 hover:text-white rounded-md p-2 max-md:hidden dark:text-purple-500 dark:bg-gray-950 dark:hover:bg-purple-600 dark:hover:text-white"
-            type="button"
+        <button
+          className="hoverable border-purple-700 border text-purple-800 bg-white hover:bg-purple-600 hover:text-white rounded-md p-2 max-md:hidden dark:text-purple-500 dark:bg-gray-950 dark:hover:bg-purple-600 dark:hover:text-white"
+          type="button"
+        >
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
           >
             Contact Me
-          </button>
-        </Link>
+          </Link>
+        </button>
+
         <HamburgerButton
           onClick={hamburgerOnClick}
           sidebarOpened={sidebarOpened}
