@@ -20,6 +20,7 @@ function MySkills() {
                 src={item.src}
                 alt=""
                 width={index === 0 ? "90px" : "60px"}
+                loading="lazy"
               />
             </div>
             <div className="flex flex-col gap-4">

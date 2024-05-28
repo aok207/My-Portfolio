@@ -45,7 +45,7 @@ function Projects() {
             className="flex flex-col items-start gap-8 flex-1 bg-white shadow-md rounded-t-xl min-h-[700px] group dark:bg-slate-900"
           >
             <div className="rounded-sm w-full">
-              <img src={item.src} alt="project" />
+              <img src={item.src} alt="project" loading="lazy" />
             </div>
             <div className="flex flex-col p-8 items-start gap-8 self-stretch">
               <div className="flex flex-col gap-5">

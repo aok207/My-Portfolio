@@ -128,7 +128,12 @@ const Navbar = () => {
           duration={500}
           className="hoverable flex items-center"
         >
-          <img src="./Logo.png" alt="logo" className="mr-3 w-10 max-md:w-8" />
+          <img
+            src="./Logo.png"
+            alt="logo"
+            className="mr-3 w-10 max-md:w-8"
+            loading="lazy"
+          />
           <h4 className="hoverable text-gray-700 dark:text-indigo-300 font-mono max-md:text-sm">
             Aung Oo Khant
           </h4>

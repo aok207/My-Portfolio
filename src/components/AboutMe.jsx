@@ -9,6 +9,7 @@ function AboutMe() {
           src="./img/about-me.png"
           alt="About me"
           className="max-lg:mx-auto"
+          loading="lazy"
         />
       </div>
       <div className="basis-1/2 flex flex-col gap-10 max-lg:py-10">
