@@ -2,49 +2,49 @@
   "skills": [
     {
       "id": "1",
-      "src": "./img/HTML and CSS.png",
+      "src": "/img/HTML and CSS.png",
       "title": "HTML/CSS",
       "description": "Skilled in crafting structured HTML documents and applying CSS for responsive, visually appealing web design. Proficient with HTML5 elements, Flexbox/Grid layouts, and responsive techniques. Familiar with basic CSS animations, actively exploring advanced features for modern web design practices."
     },
     {
       "id": "2",
-      "src": "./img/javascript.png",
+      "src": "/img/javascript.png",
       "title": "Javascript",
       "description": "Solid understanding of JavaScript, covering variables, control flow, and asynchronous operations. Proficient in DOM manipulation, event handling, and callbacks. Actively exploring ES6+ features and modern JavaScript frameworks."
     },
     {
       "id": "3",
-      "src": "./img/react.png",
+      "src": "/img/react.png",
       "title": "React",
       "description": "Competent in React for building dynamic user interfaces. Skilled with components, state management, and hooks. Proficient in React Router and exploring advanced concepts such as Higher-Order Components (HOCs) and performance optimization."
     },
     {
       "id": "4",
-      "src": "./img/bootstrap and tailwind.png",
+      "src": "/img/bootstrap and tailwind.png",
       "title": "CSS FrameWorks",
       "description": "Skilled in Tailwind CSS and Bootstrap for creating responsive, modern user interfaces. Proficient in Tailwind's utility-first approach and Bootstrap's component library. Seamlessly integrates both frameworks for efficient front-end development."
     },
     {
       "id": "5",
-      "src": "./img/python.png",
+      "src": "/img/python.png",
       "title": "Python",
       "description": "Competent in Python with a focus on effective syntax, data structures, and object-oriented programming. Capable of handling file operations, decorators, and generators. Continuously expanding knowledge in advanced data structures and multithreading."
     },
     {
       "id": "6",
-      "src": "./img/django.png",
+      "src": "/img/django.png",
       "title": "Django",
       "description": "Proficient in Django, adept at project setup, models, and migrations. Skilled in Class-Based Views (CBVs), Django forms, and authentication. Expanding expertise in middleware, context processors, and advanced ORM concepts.Experienced in building RESTful APIs using Django REST Framework"
     },
     {
       "id": "7",
-      "src": "./img/git.png",
+      "src": "/img/git.png",
       "title": "Git And GitHub",
       "description": "Adept at using Git for version control with proficiency in basic commands, branches, and merges. Experienced in handling merge conflicts and working collaboratively with GitHub. Actively exploring Git workflows and advanced branching strategies."
     },
     {
       "id": "8",
-      "src": "./img/typescript-icon.svg",
+      "src": "/img/typescript-icon.svg",
       "title": "TypeScript",
       "description": "Proficient in TypeScript fundamentals, encompassing syntax mastery and adeptness in leveraging its robust typechecking mechanisms for enhanced code safety. Actively pursuing the integration of TypeScript into upcoming projects, with a commitment to staying abreast of its latest features and best practices."
     }
@@ -52,28 +52,28 @@
   "portfolio": [
     {
       "id": "1",
-      "src": "./img/project1.png",
+      "src": "/img/project1.png",
       "title": "Movie Recommendation Website",
       "description": "Developed as the culmination of the CS50 course, this website employs Python and Flask for the backend, complemented by JavaScript for AJAX requests. The platform generates personalized movie recommendations based on user quiz responses. Utilizing the TMDb API, the website taps into a vast movie database to enhance the user experience.",
       "link": "https://github.com/aok207/CS50x-Final-Project"
     },
     {
       "id": "2",
-      "src": "./img/project2.png",
+      "src": "/img/project2.png",
       "title": "URL shortening platform",
       "description": "Developed as the final project for the CS50 Web course, this URL shortening website features a secure authentication system. Utilizing Django for the backend and incorporating JavaScript, CSS, and Bootstrap, the platform offers a user-friendly dashboard. Users can effortlessly create, manage, and delete shortened URLs while accessing detailed analytics. The analytics include click counts, geographic distribution, device-specific insights, and trending click patterns.",
       "link": "https://github.com/aok207/CS50x-Web-Final-Project"
     },
     {
       "id": "3",
-      "src": "./img/project3.png",
+      "src": "/img/project3.png",
       "title": "LinkedIn Clone",
       "description": "Designed as a LinkedIn clone, this project prioritizes a seamless user experience with features such as secure authentication and Firebase integration for both database management and user authentication. The platform enables users to create and share posts. Built with React and enhanced with Material-UI, the clone mirrors the familiar LinkedIn interface.",
       "link": "https://github.com/aok207/LinkedIn-Clone"
     },
     {
       "id": "4",
-      "src": "./img/project4.png",
+      "src": "/img/project4.png",
       "title": "E-Commerce Website",
       "description": "Crafted as an eCommerce platform with an intuitive admin panel, this project seamlessly integrates Laravel, React, and MySQL. It offers authentication, authorization, and OAuth with Google and GitHub. Users enjoy browsing a vast product catalog with dynamic filtering, bookmarking products, and secure checkout via PayPal. Admins manage products, categories, users, and orders, with full control over the system's operations.",
       "link": "https://github.com/aok207/E-commerce-website"
