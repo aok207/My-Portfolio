@@ -1,5 +1,5 @@
 import CallMadeIcon from "@mui/icons-material/CallMade";
-import data from "../../../data/index.json";
+import data from "../../../../data/index.json";
 
 function Projects() {
   return (
