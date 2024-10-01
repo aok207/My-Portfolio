@@ -41,9 +41,9 @@ const FloatingDock = () => {
   });
 
   return (
-    <nav className="fixed bottom-10 left-1/2 transform -translate-x-1/2 rounded-full">
+    <nav className="fixed bottom-10 left-1/2 transform -translate-x-1/2 rounded-full z-[99999]">
       <motion.ul
-        className="rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center border border-[rgba(255,255,255,0.10)] dark:bg-[rgba(40,40,40,0.70)]"
+        className="rounded-full bg-gray-200 dark:bg-neutral-900 flex items-center border border-[rgba(255,255,255,0.10)] dark:bg-[rgba(40,40,40,0.70)]"
         initial={{ y: 200, opacity: 1 }}
         animate={{ y: isVisible ? 0 : 200, opacity: isVisible ? 1 : 0 }}
         transition={{ ease: "linear" }}
@@ -59,7 +59,7 @@ const FloatingDock = () => {
         ))}
 
         <motion.div
-          className="bg-gray-200 dark:bg-neutral-700 absolute z-0 rounded-full h-12"
+          className="bg-gray-800 dark:bg-neutral-700 absolute z-0 rounded-full h-12"
           animate={{ ...position }}
         />
       </motion.ul>
@@ -102,7 +102,7 @@ const Tab = ({
       className={cn(
         "px-4 py-3 rounded-full z-10 transition-colors",
         currentPath !== item.href
-          ? "text-gray-400 hover:text-white"
+          ? "text-gray-800 dark:text-gray-400 hover:text-white dark:hover:text-white"
           : "text-white"
       )}
       onMouseEnter={() => {
