@@ -41,7 +41,7 @@ const FloatingDock = () => {
   });
 
   return (
-    <nav className="fixed bottom-10 left-1/2 transform -translate-x-1/2 rounded-full z-[99999]">
+    <nav className="fixed bottom-9 left-1/2 transform -translate-x-1/2 rounded-full z-[99999]">
       <motion.ul
         className="rounded-full bg-gray-200 dark:bg-neutral-900 flex items-center border border-[rgba(255,255,255,0.10)] dark:bg-[rgba(40,40,40,0.70)]"
         initial={{ y: 200, opacity: 1 }}

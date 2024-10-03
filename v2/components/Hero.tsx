@@ -25,27 +25,27 @@ const Hero = () => {
       </motion.h1>
 
       <motion.h1
-        className="text-4xl font-extrabold dark:text-white text-black tracking-wide"
+        className="text-2xl lg:text-4xl font-extrabold dark:text-white text-black tracking-wide w-2/3 md:w-full"
         initial="initial"
         animate="animate"
         transition={{ ease: "easeIn", duration: 0.3 }}
         variants={slideUp}
       >
-        <div className="flex gap-6">
+        <div className="w-full flex space-x-5 flex-wrap justify-center">
           {"Turning complex problems into".split(" ").map((word, idx) => (
             <span key={`${idx}-${word}`}>{word}</span>
           ))}
         </div>
 
-        <div className="flex gap-6 justify-center w-full">
-          {"clean, elegant solutions".split(" ").map((word, idx) => (
+        <div className="w-full flex space-x-5 flex-wrap justify-center">
+          {"clean and elegant solutions".split(" ").map((word, idx) => (
             <span key={`${idx}-${word}`}>{word}</span>
           ))}
         </div>
       </motion.h1>
 
       <motion.h1
-        className="text-lg font-extrabold text-blue-700 dark:text-blue-300"
+        className="text-lg font-extrabold text-blue-700 dark:text-blue-300 w-2/3 md:w-full text-wrap"
         initial="initial"
         animate="animate"
         transition={{ ease: "easeIn", duration: 0.3 }}

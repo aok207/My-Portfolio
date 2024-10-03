@@ -54,7 +54,7 @@ export const navbar = [
 
 export const dock: { text: string; href: string }[] = [
   { text: "Home", href: "/" },
-  { text: "Skills", href: "/skills" },
+  { text: "About", href: "/about" },
   { text: "Projects", href: "/projects" },
   { text: "Contact", href: "/contact" },
 ];
