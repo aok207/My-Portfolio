@@ -25,7 +25,7 @@ const Navbar = () => {
             key={`${social}-${idx}`}
             href={social.href}
             target="_blank"
-            className="text-sm"
+            className="text-lg"
             whileHover={{ rotate: "360deg" }}
             transition={{ duration: 0.6, ease: "easeInOut", type: "spring" }}
           >

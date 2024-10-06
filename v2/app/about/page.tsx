@@ -1,3 +1,4 @@
+import Heading from "@/components/Heading";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -10,9 +11,7 @@ const About = () => {
     <main className="my-8 flex flex-col gap-10 text-center lg:text-left">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center">
         <div className="flex flex-col gap-5">
-          <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text text-center lg:text-left">
-            Hey there!
-          </h1>
+          <Heading>Hey there!</Heading>
 
           <p className="text-gray-400 leading-loose tracking-wide">
             I&apos;m Aung Oo Khant, a junior developer with a passion for all
