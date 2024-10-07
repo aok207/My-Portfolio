@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
 
 const slideUp = {

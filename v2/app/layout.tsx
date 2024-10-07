@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import FloatingDock from "@/components/FloatingDock";
 import Footer from "@/components/Footer";
 import CursorFollow from "@/components/CursorFollow";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
           <FloatingDock />
           <Footer />
         </div>
+        <Toaster />
       </body>
     </html>
   );

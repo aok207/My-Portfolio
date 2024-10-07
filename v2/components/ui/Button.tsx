@@ -1,18 +1,6 @@
+import { ButtonType, ButtonVarientType } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import React, { ReactNode } from "react";
-
-type VarientType =
-  | "default"
-  | "slide"
-  | "dotExpend"
-  | "gradientShadow"
-  | "hoverShadow";
-
-interface ButtonType extends React.HTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  children: ReactNode;
-  varient?: VarientType;
-}
+import React from "react";
 
 const Button = ({
   className = "",
@@ -20,18 +8,14 @@ const Button = ({
   varient = "default",
   ...props
 }: ButtonType) => {
-  const varientClasses = new Map<VarientType, string>([
+  const varientClasses = new Map<ButtonVarientType, string>([
     [
       "default",
-      "rounded-md px-3 py-2 text-white bg-indigo-500 hover:bg-indigo-700",
-    ],
-    [
-      "hoverShadow",
-      "rounded-none px-3 py-2 text-white bg-black dark:text-black dark:bg-white",
+      "rounded-md px-3 py-2 text-white bg-indigo-500 enabled:hover:bg-indigo-700",
     ],
     [
       "gradientShadow",
-      "px-3 py-2 group relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 duration-300 hover:scale-110 text-white active:scale-100",
+      "px-3 py-2 group relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 duration-300 enabled:hover:scale-110 text-white enabled:active:scale-100",
     ],
     [
       "slide",
@@ -43,19 +27,19 @@ const Button = ({
         before:transition-transform before:duration-1000
         before:content-['']
 
-        hover:scale-105 hover:text-neutral-50 dark:hover:text-neutral-900
-        hover:before:translate-x-[0%]
-        hover:before:translate-y-[0%]
-        active:scale-95`,
+        enabled:hover:scale-105 enabled:hover:text-neutral-50 enabled:dark:hover:text-neutral-900
+        enabled:hover:before:translate-x-[0%]
+        enabled:hover:before:translate-y-[0%]
+        enabled:active:scale-95`,
     ],
   ]);
 
   return (
     <button
       className={cn(
-        className,
         varientClasses.get(varient),
-        "transition-all duration-150 w-fit"
+        "w-fit disabled:cursor-not-allowed disabled:opacity-50",
+        className
       )}
       {...props}
     >

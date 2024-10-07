@@ -7,18 +7,14 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import { cn } from "@/lib/utils";
-
-type Position = {
-  left: number;
-  width: number;
-};
+import { PillPosition } from "@/lib/types";
 
 const FloatingDock = () => {
-  const [position, setPosition] = useState<Position>({
+  const [position, setPosition] = useState<PillPosition>({
     left: 0,
     width: 0,
   });
-  const [prevPosition, setPrevPosition] = useState<Position>({
+  const [prevPosition, setPrevPosition] = useState<PillPosition>({
     left: 0,
     width: 0,
   });
@@ -74,9 +70,9 @@ const Tab = ({
   setPrevPosition,
 }: {
   item: { text: string; href: string };
-  setPosition: React.Dispatch<React.SetStateAction<Position>>;
-  prevPosition: Position;
-  setPrevPosition: React.Dispatch<React.SetStateAction<Position>>;
+  setPosition: React.Dispatch<React.SetStateAction<PillPosition>>;
+  prevPosition: PillPosition;
+  setPrevPosition: React.Dispatch<React.SetStateAction<PillPosition>>;
 }) => {
   const ref = useRef<null | HTMLLIElement>(null);
   const currentPath = usePathname();
