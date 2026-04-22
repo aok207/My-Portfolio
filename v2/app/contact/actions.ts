@@ -19,7 +19,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 
 export async function contactFormAction(
   data: TContactFormSchema,
-  recaptchaToken: string
+  recaptchaToken: string,
 ): Promise<{
   errors: { root?: string; email?: string[]; message?: string[] } | undefined;
 }> {
@@ -85,40 +85,21 @@ export async function contactFormAction(
     Aung Oo Khant`,
   };
 
-  let error = false;
-
-  // Send the respond mail
-  mailTransporter.sendMail(respondMailDetails, (err) => {
-    if (err) {
-      console.log(
-        `There was an error while sending email to ${validation.data.email}: ${err}`
-      );
-      error = true;
-      return;
-    }
-
-    // Notify mail details
-    const notifyMailDetails = {
-      from: "aungookhant.business@gmail.com",
-      to: "aungookhant007@gmail.com",
-      subject: `A new customer or an employer!`,
-      text: `Yo! someone with the e-mail ${validation.data.email} sumitted the form, and he said the following:
+  // Notify mail details
+  const notifyMailDetails = {
+    from: "aungookhant.business@gmail.com",
+    to: "aungookhant007@gmail.com",
+    subject: `A new customer or an employer!`,
+    text: `Yo! someone with the e-mail ${validation.data.email} sumitted the form, and he said the following:
 
     ${validation.data.message}`,
-    };
+  };
 
-    mailTransporter.sendMail(notifyMailDetails, (err) => {
-      if (err) {
-        console.log(
-          `There was an error while sending email to aungookhant007@gmail.com: ${err}`
-        );
-
-        return;
-      }
-    });
-  });
-
-  if (error) {
+  try {
+    await mailTransporter.sendMail(respondMailDetails);
+    await mailTransporter.sendMail(notifyMailDetails);
+  } catch (err) {
+    console.log(`There was an error while sending email: ${err}`);
     return {
       errors: {
         email: undefined,
@@ -127,6 +108,8 @@ export async function contactFormAction(
       },
     };
   }
+
+  console.log("Email sent successfully!");
 
   return {
     errors: undefined,
